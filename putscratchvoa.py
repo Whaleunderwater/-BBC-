@@ -94,12 +94,17 @@ def main():
 
     day=date1[2]
     str_day=""
+    str_month=""
     while day<=date2[2]:
         if day<10:
             str_day="0"+str(day)
         else:
             str_day=str(day)
-        inputdate=str(date1[0])+"-"+str(date1[1])+"-"+str_day
+        if month<10:
+            str_month="0"+str(month)
+        else:
+            str_month=str(month)
+        inputdate=str(date1[0])+"-"+str_month+"-"+str_day
         inputdate="VOA标准精精听"+inputdate
         scratchmp3(search_mp3(inputdate),inputdate)
         day+=1
