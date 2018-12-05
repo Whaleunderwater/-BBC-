@@ -8,7 +8,7 @@ import re
 ###生成cookie，利用cookie，发送请求
 def withcookie(url):
     user_agent="Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36"
-    cookie="Hm_lvt_4e7c74660fca105e4398ab0e17867537=1542861523; cdb_cookietime=2592000; smile=1D1; cdb_auth=f9a0lXPbFFY1LTeIF8iniSWwYlCQia%2B6lr3Z6hGZnXT5eVJs%2FhY3koWRjfNdUkaWBNFD7MptDJGesZYZeuC9gACEZ1cBRQ; put_cookie_expire=7200; Hm_lvt_c077b0c8f9ed9c09781846279500eae4=1543549020,1543554312,1543561688,1543825588; cdb_fid169=1543826189; cdb_oldtopics=D536010D535983D535998D536011D; cdb_fid170=1543826459; cdb_sid=fBWRRQ; cdb_onlineusernum=2382; cdb_visitedfid=169D170D48D50D171D27D26; Hm_lpvt_c077b0c8f9ed9c09781846279500eae4=1543827225"
+    cookie="YOUR COOKIE"
     headers={"User-Agent":user_agent,"Cookie":cookie}
     rt=urllib.request.Request(url,headers=headers)
     response=urllib.request.urlopen(rt)
@@ -60,10 +60,10 @@ def scratchmp3(url,inputdate):
     hiddentxt=re.sub(r'[\u4e00-\u9fa5]+.*$',"",txt)
     finaltxt=re.sub(r'_+',hiddentxt,re.sub(r'_+$','',re.sub(r'\W$','',formertxt)))
     ###文本抓取，中文过滤
-    f=open("E:\A个人工作\put听力训练\BBC精听\\"+inputdate+".mp3","wb")
+    f=open("YOUR PATH"+inputdate+".mp3","wb")
     f.write((urllib.request.urlopen(mp3path)).read())
     f.close()
-    f=open("E:\A个人工作\put听力训练\BBC精听\\"+inputdate+".txt","w")
+    f=open("YOUR PATH"+inputdate+".txt","w")
     endtxt=re.sub(r'[\\。]','',re.sub(r'\. \.','. ',re.sub(r'\s+',' ',finaltxt)))
     f.write(endtxt)
     f.close()
